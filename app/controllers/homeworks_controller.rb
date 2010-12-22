@@ -10,7 +10,7 @@ class HomeworksController < ApplicationController
    
     @homework = Homework.new(params[:homework])
     @homework.homework_group_id = @homework_group.id
-    @homework.image_file = params[:homework]
+    
     if @homework.save
       flash[:notice] = "New homework created successfully."
       redirect_to [@batch, @homework_group]

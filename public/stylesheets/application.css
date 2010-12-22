@@ -821,3 +821,12 @@ tr.tr-blank{
     font-size:14px;
     text-decoration:underline;
 }
+#homework_description {
+-moz-border-radius:10px 10px 10px 10px;
+background:none repeat scroll 0 0 #EEEEEE;
+border:1px solid #C6C6C6;
+font-family:Arial;
+height:161px;
+padding:1px;
+width:520px;
+}
