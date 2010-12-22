@@ -92,7 +92,7 @@
               <% dash_news.each do |n| %>
                 <div class="sidebar_news_item<%= cycle("0", "1") %>">
                   <h5><%= link_to n.title, :controller => 'news', :action => 'view', :id => n.id %></h5>
-                  <small><%= (n.created_at) %> ago</small>
+                  <small><%= time_ago_in_words(n.created_at) %> ago</small>
                 </div>
               <% end %>
               <div class="extender"> </div>
