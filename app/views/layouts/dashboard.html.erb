@@ -81,13 +81,11 @@
             
           <div class="fed_logo">
             <img src="/images/application/app_fedena_logo.jpg"/>
-
           </div>
           <% end %>
         </div>
         <div id="sidebar_news_area">
           <% if action_name == "dashboard" %>
-
             <%= link_to " ", { :controller => "news", :action => "index" }, :id => 'news_feed_top_img' %>
             <div id="news_feed">
               <% dash_news = News.find(:all, :order => 'created_at desc', :limit => 5) %>
