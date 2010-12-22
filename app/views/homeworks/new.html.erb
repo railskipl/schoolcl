@@ -68,7 +68,10 @@
           <%= f.label :end_time %>
           <div class="text-input-bg"><%= f.calendar_date_select :end_time %></div>
         </div>
-
+ <div class="label-field-pair">
+	 <%= f.label :description %>
+ <div><%= homework_form.text_area :description,:rows => 7 %></div>
+</div>
         <%= submit_tag "", :value => "► Save", :class => "submit_button" %>
 
       <% end %>
