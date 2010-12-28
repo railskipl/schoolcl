@@ -79,7 +79,7 @@ p.flash-msg {
 
 #content-header {
     height:100px;
-    background:#fff url(../../images/examination/header_underline.jpg) bottom no-repeat;
+    background:#fff url(../../images/examination/content_header_img.jpg) bottom no-repeat;
 }
 #content-header img {
     margin:0;
@@ -358,7 +358,7 @@ body > #content_wrapper {
     padding : 0;
 }
 #inner-tab-menu ul li {
-    background-color : #9d0e00;
+    background-color : #FB8E2C;
     color : #fff;
     float : left;
     font-size : 0.9em;

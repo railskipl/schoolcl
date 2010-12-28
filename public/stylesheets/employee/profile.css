@@ -297,7 +297,7 @@
     text-align:left;
     width:100px;
     font-size:.8em;
-    background:#9D0E00;
+    background:#FB8E2C;
     -webkit-border-bottom-left-radius:5px;
     -webkit-border-bottom-right-radius:5px;
     -khtml-border-radius-bottomleft:5px;
@@ -350,7 +350,7 @@ html>body #nav ul.scriptaculously{/*ie shit*/
     height:1.5em;
     display:block;
     /*padding:10px 10px 0 10px;*/
-    background:#9D0E00;
+    background:#FB8E2C;
     /*	-webkit-border-top-left-radius:5px;
 	-webkit-border-top-right-radius:5px;
 	-khtml-border-radius-topleft:5px;
@@ -387,7 +387,7 @@ html>body #nav ul.scriptaculously{/*ie shit*/
 }
 
 #nav ul li ul li{
-    background-color:#9D0E00;
+    background-color:#FB8E2C;
     font-size:1.3em;
     width:60px;
     height:1.5em;
