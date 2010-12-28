@@ -83,7 +83,7 @@ class PayrollController < ApplicationController
 
   def edit_payroll_details
     @employee = Employee.find(params[:id])
-    @independent_categories = PayrollCategory.find_all_by_payroll_category_id_and_status(nil, true)
+    @independent_categories = PayrollCategory.find_all_by_payroll_category_id_and_status(nil, 1)
     @dependent_categories = PayrollCategory.find_all_by_status(true, :conditions=>"payroll_category_id != \'\'")
     if request.post?
       params[:manage_payroll].each_pair do |k, v|
