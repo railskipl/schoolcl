@@ -52,7 +52,7 @@ class PayrollController < ApplicationController
   def manage_payroll
     @employee = Employee.find(params[:id])
     @independent_categories = PayrollCategory.find_all_by_payroll_category_id_and_status(nil, true)
-    @dependent_categories = PayrollCategory.find_all_by_status(true, :conditions=>"payroll_category_id != \'1\'")
+    @dependent_categories = PayrollCategory.find_all_by_status(true, :conditions=>"payroll_category_id = \'1\'")
     payroll_created = EmployeeSalaryStructure.find_all_by_employee_id(@employee.id)
     if payroll_created.empty?
     if request.post?
