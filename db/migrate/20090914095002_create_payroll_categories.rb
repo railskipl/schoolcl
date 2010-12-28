@@ -4,8 +4,8 @@ class CreatePayrollCategories < ActiveRecord::Migration
       t.string :name
       t.float  :percentage
       t.references :payroll_category
-      t.boolean :is_deduction
-      t.boolean :status
+      t.tinyint :is_deduction
+      t.tinyint :status
     end
   end
 
