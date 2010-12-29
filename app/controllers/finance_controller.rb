@@ -461,7 +461,7 @@ class FinanceController < ApplicationController
     @finance_fee_category = FinanceFeeCategory.new
     @finance_fee_particular = FinanceFeeParticulars.new
     @batches = Batch.active
-    @master_categories = FinanceFeeCategory.paginate(:page => params[:page],:conditions=> ["is_deleted = '#{false}' and is_master = 1"])
+    @master_categories = FinanceFeeCategory.paginate(:page => params[:page],:conditions=> ["is_deleted = '#{false}' and is_master = '1'"])
     @student_categories = StudentCategory.find :all
   end
   
@@ -479,7 +479,7 @@ class FinanceController < ApplicationController
     unless @finance_fee_category.save
       @error = true
     end
-    @master_categories = FinanceFeeCategory.paginate(:page => params[:page] ,:conditions=> ["is_deleted = '#{false}' and is_master = 1"])
+    @master_categories = FinanceFeeCategory.paginate(:page => params[:page] ,:conditions=> ["is_deleted = '#{false}' and is_master = '1'"])
     respond_to do |format|
       format.js { render :action => 'master_category_create' }
     end
@@ -495,7 +495,7 @@ class FinanceController < ApplicationController
   def master_category_update
     @finance_fee_category = FinanceFeeCategory.find(params[:id])
     @finance_fee_category.update_attributes(params[:finance_fee_category])
-    @master_categories = FinanceFeeCategory.paginate(:page => params[:page], :conditions =>["is_deleted = '#{false}' and is_master = 1"])
+    @master_categories = FinanceFeeCategory.paginate(:page => params[:page], :conditions =>["is_deleted = '#{false}' and is_master = '1'"])
   end
 
   def master_category_particulars
@@ -534,14 +534,14 @@ class FinanceController < ApplicationController
     @finance_fee_category = FinanceFeeCategory.find(params[:id])
     @finance_fee_category.update_attributes(:is_deleted => true)
     @finance_fee_category.delete_particulars
-    @master_categories = FinanceFeeCategory.paginate(:page => params[:page], :conditions =>["is_deleted = '#{false}' and is_master = 1"])
+    @master_categories = FinanceFeeCategory.paginate(:page => params[:page], :conditions =>["is_deleted = '#{false}' and is_master = '1'"])
     respond_to do |format|
       format.js { render :action => 'master_category_delete' }
     end
   end
 
   def fees_particulars_new
-    @fees_categories = FinanceFeeCategory.find(:all ,:conditions=> ["is_deleted = '#{false}' and is_master = 1"])
+    @fees_categories = FinanceFeeCategory.find(:all ,:conditions=> ["is_deleted = '#{false}' and is_master = '1'"])
     @student_categories = StudentCategory.find :all
     @finance_fee_particulars = FinanceFeeParticulars.new
     respond_to do |format|
