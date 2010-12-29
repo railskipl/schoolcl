@@ -623,7 +623,7 @@ class EmployeeController < ApplicationController
     @new_payslip_category == []
     @employee = Employee.find(params[:id])
     @independent_categories = PayrollCategory.find_all_by_payroll_category_id_and_status(nil, true)
-    @dependent_categories = PayrollCategory.find_all_by_status(true, :conditions=>"payroll_category_id != \'\'")
+    @dependent_categories = PayrollCategory.find_all_by_status(true, :conditions=>"payroll_category_id = \'1\'")
     @employee_additional_categories = IndividualPayslipCategory.find_all_by_employee_id(@employee.id, :conditions=>"include_every_month = true")
     @new_payslip_category = IndividualPayslipCategory.find_all_by_employee_id_and_salary_date(@employee.id,nil)
     @user = current_user
