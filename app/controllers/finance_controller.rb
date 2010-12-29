@@ -161,7 +161,7 @@ class FinanceController < ApplicationController
   def salary_department
     month_date
     @departments = EmployeeDepartment.find(:all)
-    @monthly_payslips = MonthlyPayslip.find(:all,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@last_date}' and is_approved = '1'"])
+    @monthly_payslips = MonthlyPayslip.find(:all,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@last_date}'"])
 
   end
 
@@ -169,7 +169,7 @@ class FinanceController < ApplicationController
     month_date
     @department = EmployeeDepartment.find(params[:id])
     @employees = @department.employees
-    @monthly_payslips = MonthlyPayslip.find(:all,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@last_date}' and is_approved = '1'"])
+    @monthly_payslips = MonthlyPayslip.find(:all,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@last_date}'"])
 
   end
 
@@ -265,7 +265,7 @@ class FinanceController < ApplicationController
   end
 
   def one_click_approve
-    @dates = MonthlyPayslip.find_all_by_salary_date(params[:salary_date],:conditions => ["is_approved = 'false'"])
+    @dates = MonthlyPayslip.find_all_by_salary_date(params[:salary_date],:conditions => ["is_approved = false"])
     @salary_date = params[:salary_date]
     render :update do |page|
       page.replace_html "approve",:partial=> "one_click_approve"
