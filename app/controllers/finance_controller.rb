@@ -161,7 +161,7 @@ class FinanceController < ApplicationController
   def salary_department
     month_date
     @departments = EmployeeDepartment.find(:all)
-    @monthly_payslips = MonthlyPayslip.find(:all,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@last_date}'"])
+    @monthly_payslips = MonthlyPayslip.find(:all,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@last_date}' and is_approved = '1'"])
 
   end
 
@@ -169,7 +169,7 @@ class FinanceController < ApplicationController
     month_date
     @department = EmployeeDepartment.find(params[:id])
     @employees = @department.employees
-    @monthly_payslips = MonthlyPayslip.find(:all,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@last_date}'"])
+    @monthly_payslips = MonthlyPayslip.find(:all,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@last_date}' and is_approved = '1'"])
 
   end
 
