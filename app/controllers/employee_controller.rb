@@ -443,10 +443,10 @@ class EmployeeController < ApplicationController
     other_conditions += " AND employee_position_id = '#{params[:employee_position_id]}'" unless params[:employee_position_id] == ""
     other_conditions += " AND employee_grade_id = '#{params[:employee_grade_id]}'" unless params[:employee_grade_id] == ""
     @employee = Employee.find(:all,
-      :conditions => "(first_name LIKE \"#{params[:query]}%\"
-                       OR middle_name LIKE \"#{params[:query]}%\"
-                       OR last_name LIKE \"#{params[:query]}%\"
-                       OR (concat(first_name, \" \", last_name) LIKE \"#{params[:query]}%\"))" + other_conditions,
+      :conditions => "(first_name LIKE \'#{params[:query]}%\'
+                       OR middle_name LIKE \'#{params[:query]}%\'
+                       OR last_name LIKE \'#{params[:query]}%\'
+                       OR (concat(first_name, \' \', last_name) LIKE \'#{params[:query]}%\'))" + other_conditions,
       :order => "first_name asc") unless params[:query] == ''
     render :layout => false
   end
