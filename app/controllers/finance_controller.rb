@@ -265,7 +265,7 @@ class FinanceController < ApplicationController
   end
 
   def one_click_approve
-    @dates = MonthlyPayslip.find_all_by_salary_date(params[:salary_date],:conditions => ["is_approved = false"])
+    @dates = MonthlyPayslip.find_all_by_salary_date(params[:salary_date],:conditions => ["is_approved = 'false'"])
     @salary_date = params[:salary_date]
     render :update do |page|
       page.replace_html "approve",:partial=> "one_click_approve"
