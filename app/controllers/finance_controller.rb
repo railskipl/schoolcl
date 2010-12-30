@@ -186,7 +186,8 @@ class FinanceController < ApplicationController
       return
     end
     @monthly_payslips = MonthlyPayslip.find_all_by_salary_date(@salary_date,
-      :conditions=> "employee_id =#{params[:id]}")
+      :conditions=> "employee_id =#{params[:id]}",
+      :order=> "payroll_category_id ASC")
 
     @individual_payslip_category = IndividualPayslipCategory.find_all_by_salary_date(@salary_date,
       :conditions=>"employee_id =#{params[:id]}",
