@@ -482,7 +482,7 @@ class EmployeeController < ApplicationController
     current_years = total_current_exp_days/365
     rem = total_current_exp_days%365
     current_months = rem/30
-    @total_years = exp_years+current_years unless exp_years.nil?
+    @total_years = exp_years unless exp_years.nil?
     @total_months = exp_months+current_months unless exp_months.nil?
   end
 
