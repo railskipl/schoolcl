@@ -60,8 +60,7 @@ data = [["Date Of Birth", @employee.date_of_birth],
         ["Father's name", @employee.father_name],
         ["Mother's name", @employee.mother_name],
         ["Spouse name", @employee.husband_name],
-        ["Blood group", @employee.blood_group],
-        ["Nationality", @employee.nationality.name]]
+        ["Blood group", @employee.blood_group]]
 
 pdf.table data, :width => 500,
                 :border_color => "000000",
