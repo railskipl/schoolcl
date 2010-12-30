@@ -426,7 +426,7 @@ class FinanceController < ApplicationController
   end
 
   def view_asset
-    @assets = Asset.find(:all,:conditions => 'is_deleted = '0'')
+    @assets = Asset.find(:all,:conditions => 'is_deleted = 0')
   end
 
   def edit_asset
