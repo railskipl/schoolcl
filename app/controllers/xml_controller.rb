@@ -50,7 +50,7 @@ class XmlController < ApplicationController
       employees = Employee.find(:all)
       
       @salaries = []
-      @months = MonthlyPayslip.find(:all,:select =>"distinct salary_date" ,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@end_date}' and is_approved = 1"])
+      @months = MonthlyPayslip.find(:all,:select =>"distinct salary_date" ,:order => 'salary_date desc', :conditions => ["salary_date >= '#{@start_date}' and salary_date <= '#{@end_date}' and is_approved = '1'"])
       @months.each do |m|
         @salary = Employee.total_employees_salary(employees, m.salary_date, m.salary_date)
         @salaries.push @salary
