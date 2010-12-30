@@ -404,7 +404,7 @@ class FinanceController < ApplicationController
   end
 
   def view_liability
-    @liabilities = Liability.find(:all,:conditions => 'is_deleted = 0')
+    @liabilities = Liability.find(:all,:conditions => "is_deleted = '0'")
   end
   
   def delete_liability
