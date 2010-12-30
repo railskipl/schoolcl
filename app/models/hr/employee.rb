@@ -118,7 +118,7 @@ class Employee < ActiveRecord::Base
 
   def salary(start_date,end_date)
     MonthlyPayslip.find_by_employee_id(self.id,:order => 'salary_date desc',
-      :conditions => ["salary_date >= '#{start_date.to_date}' and salary_date <= '#{end_date.to_date}' and is_approved = '1'"]).salary_date
+      :conditions => ["salary_date >= '#{start_date.to_date}' and salary_date <= '#{end_date.to_date}' and is_approved = 1"]).salary_date
 
   end
 
@@ -147,7 +147,7 @@ class Employee < ActiveRecord::Base
 
   def all_salaries(start_date,end_date)
     MonthlyPayslip.find_all_by_employee_id(self.id,:select =>"distinct salary_date" ,:order => 'salary_date desc',
-      :conditions => ["salary_date >= '#{start_date.to_date}' and salary_date <= '#{end_date.to_date}' and is_approved = 1"])
+      :conditions => ["salary_date >= '#{start_date.to_date}' and salary_date <= '#{end_date.to_date}' and is_approved = '1'"])
   end
 end
 
