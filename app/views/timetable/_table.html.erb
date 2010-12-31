@@ -31,7 +31,7 @@
         </td>
         <td class="td-blank"> </td>
         <% @timetable.each do |t| %>
-          <% @timing = ClassTiming.find(t.class_timing_id) %>
+         <% @timing = ClassTiming.find(t.class_timing_id) %>
           <td>
             <div class="top">
               <%= @timing.start_time.strftime("%I:%M%p") unless @timing.start_time.nil? %>-<%= @timing.end_time.strftime("%I:%M%p") unless @timing.end_time.nil? %>
