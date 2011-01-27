@@ -1,3 +1,4 @@
 declarative_authorization
 searchlogic
 prawn --version 0.6.3
+rails --version 2.3.8
