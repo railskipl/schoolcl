@@ -34,7 +34,7 @@
 
 #MB_content {
 	padding: 6px .75em;
-	overflow:auto;
+	
 }
 
 #MB_caption {
@@ -71,7 +71,7 @@
 #MB_caption { color:#000 }
 #MB_close { color:#fff;
             font-size:21px;
-            background:#98090f;
+            background:#FF9900;
             -moz-border-radius:5em;
             -webkit-border-radius:5em;
             height:25px;

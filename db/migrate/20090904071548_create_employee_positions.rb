@@ -13,6 +13,6 @@ class CreateEmployeePositions < ActiveRecord::Migration
   end
 
   def self.create_default
-    EmployeePosition.create :name => 'Fedena Admin',:employee_category_id => 1,:status => true
+    EmployeePosition.create :name => 'School Cloud Admin',:employee_category_id => 1,:status => true
   end
 end

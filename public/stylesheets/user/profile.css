@@ -2,6 +2,7 @@
 #profile_view{
     margin:25px auto;
     width:700px;
+    min-height: 208px;
 }
 
 .profile_info_label {

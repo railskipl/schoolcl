@@ -50,7 +50,7 @@
     cursor:pointer;
 }
 .sub-heading{
-    background:#9E0F15;
+    background:#333333;
     height: 1px;
     border: none;
     margin: 0 10px 15px 10px;
@@ -59,6 +59,7 @@
     font-weight: bold;
     padding-top:10px;
     padding-left:10px;
+    font-size: 15px;
 }
 .label-underline{
     background:  #eeeeee;
@@ -95,8 +96,9 @@
     width:300px;
 }
 .ajax-subject a{
-    color:#9B1017;
-    font-weight:bold;
+    color: #0E6DAD;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 
@@ -121,9 +123,7 @@ li div.prev_subject{
 
 }
 
-li{
-    width: 200px;
-}
+
 
 
 .name{
@@ -148,7 +148,4 @@ li{
 .box{
     width: 600px;
     margin:0 auto;
-}
-ul{
-
 }

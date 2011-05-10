@@ -25,8 +25,8 @@ class CreateUsers < ActiveRecord::Migration
   end
 
   def self.create_default
-    User.create :username   => 'admin',:password   => 'admin123',:first_name => 'Fedena',
-    :last_name  => 'Administrator',:email=> 'admin@fedena.com',:role=> 'Admin'
+    User.create :username   => 'admin',:password   => 'admin123',:first_name => 'School Cloud',
+    :last_name  => 'Administrator',:email=> 'admin@schoolcloud',:role=> 'Admin'
   end
 
 

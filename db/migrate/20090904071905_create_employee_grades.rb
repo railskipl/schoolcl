@@ -15,6 +15,6 @@ class CreateEmployeeGrades < ActiveRecord::Migration
   end
 
     def self.create_default
-    EmployeeGrade.create :name => 'Fedena Admin',:priority => 0 ,:status => true,:max_hours_day=>nil,:max_hours_week=>nil
+    EmployeeGrade.create :name => 'School Cloud Admin',:priority => 0 ,:status => true,:max_hours_day=>nil,:max_hours_week=>nil
   end
 end

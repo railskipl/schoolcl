@@ -1,15 +1,13 @@
 #content_header {
     padding-left:20px;
     height:137px;
-    background:#fff url(../../images/fedena_user/dashboard/content_header_img.jpg) bottom no-repeat;
 }
 #content_header h1 {
-    margin:0px;
-    padding:0px;
-    padding-top:65px;
     color:#999;
+    font-weight: bold;
 }
 #content_header h3 {
+	 border-bottom: medium none;
     margin:0px;
     padding:0px;
     color:#b00;

@@ -14,8 +14,19 @@ config.action_view.debug_rjs                         = true
 config.action_controller.perform_caching             = true
 
 # Don't care if the mailer can't send
-config.action_mailer.raise_delivery_errors = false
 
+config.action_mailer.raise_delivery_errors = false
+config.action_mailer.delivery_method = :smtp
+
+config.action_mailer.smtp_settings ={
+:address => 'mail.kunalinfotech.net',
+:port => 587,
+:domain => 'kunalinfotech.net',
+:authentication => :login,
+:user_name => 'info@kunalinfotech.net',
+:password => 'B1a2z3a4a5R6',
+:enable_starttls_auto => true
+}
 #config.after_initialize do
 #  Bullet.enable = true
 #  Bullet::Association.alert = true

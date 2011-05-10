@@ -1,0 +1,246 @@
+
+
+/* Content header for all pages */
+
+#content-header {
+    height:100px;
+    
+}
+#content-header img {
+    border: 0 none;
+    float: left;
+    margin: 0;
+    padding: 16px 0 0 15px;
+}
+#content-header h1 {
+    color: #999999;
+    display: block;
+    font-size: 22px;
+    padding: 12px 0 0 100px;
+}
+#content-header h3 {
+    border-bottom: medium none;
+    margin:0px;
+    padding:0 0 0 100px;
+    color:#b00;
+    font-size: 17px;
+}
+#app-back-button {
+    float: right;
+    margin-top: -30px;
+    position: relative;
+}
+#app-back-button a {
+    margin:0;
+    padding:0;
+    float:right
+}
+#app-back-button a img {
+    height:37px;
+    margin:0;
+    padding:0;
+    width:138px;
+    margin-right:10px;
+}
+
+#page-yield {
+    margin : 30px 0;
+}
+
+/* News block */
+
+#news_feed {
+    width:157px;
+    margin:0 auto;
+    background:#fff url(../../images/fedena_user/dashboard/news_feed_bg.jpg) repeat;
+}
+#news_feed small {
+    padding-top:0px;
+    color:#b00;
+}
+#news_feed_top_img {
+    margin:0 auto;
+    margin-top:25px;
+    height:36px;width:157px;
+    background:#fff url(../../images/fedena_user/dashboard/dash_news_top.jpg) no-repeat;
+    display: block;
+}
+#news_feed_bottom_img a {
+    display:block;
+    height:28px;width:157px;
+    text-indent:-2000px;
+}
+
+.sidebar_news_item0 {
+    margin-left:5px;
+    padding:10px;
+    background-color:#fff;
+    width:127px;
+}
+.sidebar_news_item1 {
+    margin-left:5px;
+    padding:10px;
+    background-color:#ddd;
+    width:127px;
+}
+.sidebar_news_item0 h5,
+.sidebar_news_item1 h5 {
+    margin:0;padding:0;
+}
+.sidebar_news_item0 h5 a,
+.sidebar_news_item1 h5 a {
+    text-decoration:none;color:#222;
+}
+
+#sidebar_news_area {
+    float:left;
+}
+
+/* For google chrome */
+
+input[type="text"],
+input[type="password"],
+textarea,
+select
+{
+    outline: none;
+}
+
+
+
+.pagination{
+    float:right;
+    position: relative;
+    margin-top:-30px;
+    margin-right:100px;
+}
+.pagination a.prev_page,.pagination a.next_page{
+    color:#27292b;
+    font-weight:bold;
+    text-transform: lowercase;
+    background: none;
+    text-decoration:underline;
+    border:none;
+}
+.pagination a{
+    background: #fff;
+    color:#27292b;
+    border:1px solid #a6c7ff;
+    font-weight:bold;
+    padding:3px;
+    font-size:14px;
+    text-decoration:none;
+}
+.pagination .disabled{
+    color:#27292b;
+    font-size:14px;
+    font-weight:normal;
+    text-transform: lowercase;
+    background: none;
+    text-decoration:none;
+    border:none;
+}
+.pagination .current{
+    color:#990a10;
+    font-weight:bold;
+    padding:3px;
+    font-size:14px;
+}
+
+.sel-list{
+    width:300px;
+    margin-bottom: 2px;
+}
+
+.sel-list a{
+    color:#bb0000;
+    text-decoration:none;
+}
+
+.bread_crumb {
+    color:#bb0000;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.bread_crumb a {
+   color:#000;
+    text-decoration: none;
+}
+.bread_crumb a:hover {
+   color:#bb0000;
+    text-decoration: underline;
+}
+#error-box {
+    background: #ffdedf url(/images/_global/error.png) no-repeat 10px 14px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    height : auto;
+    margin : 20px auto;
+    padding : 1px 0 1px 20px;
+}
+
+/* Inner tab menu */
+
+#inner-tab-menu {
+    height : 1.5em;
+    margin : 0;
+    padding : 0;
+}
+#inner-tab-menu ul {
+    float : right;
+    margin : 0 10px 0 0;
+    padding : 0;
+}
+#inner-tab-menu ul li {
+     background-position: 0 0;
+    font-size: 13px;
+    height: 20px;
+    line-height: 23px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    background-repeat: repeat-x;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 15px 4px;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: #FF9900;
+    background-image: url("../../images/bg-lite.png");
+    border-color: #D58000;
+    color: #FFFFFF;
+}
+#inner-tab-menu ul li a {
+    color : #fff;
+    
+     
+}
+#inner-tab-menu ul li a:hover {
+    color : #fff;
+    
+}
+.label-field-pair input:focus{
+    background: #fff;
+    border: 1px solid #9e0f15;
+}
+#page-yield {
+    margin : 30px 0;
+}
+
+#content_wrapper {
+    height: auto;
+    min-height: 92%;
+}
+
+html, body, #wrapper {
+    height: 92%;
+}
+
+
+#listing { font-size:15px; }

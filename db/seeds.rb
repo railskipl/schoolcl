@@ -9,7 +9,7 @@ StudentCategory.create([
 
 #EmployeeCategory.delete_all
 EmployeeCategory.create([
-#  {:name => 'Fedena Admin',:prefix => 'Admin',:status => true},
+#  {:name => 'School Cloud Admin',:prefix => 'Admin',:status => true},
   {:name => 'Management',:prefix => 'MGMT',:status => true},
   {:name => 'Teaching',:prefix => 'TCR',:status => true},
   {:name => 'Non-Teaching',:prefix => 'NTCR',:status => true}
@@ -17,7 +17,7 @@ EmployeeCategory.create([
 
 #EmployeePosition.delete_all
 EmployeePosition.create([
-#  {:name => 'Fedena Admin',:employee_category_id => 1,:status => true},
+#  {:name => 'School Cloud Admin',:employee_category_id => 1,:status => true},
   {:name => 'Principal',:employee_category_id => 2,:status => true},
   {:name => 'HR',:employee_category_id => 2,:status => true},
   {:name => 'Sr.Teacher',:employee_category_id => 3,:status => true},
@@ -27,7 +27,7 @@ EmployeePosition.create([
 
 #EmployeeDepartment.delete_all
 EmployeeDepartment.create([
-#  {:code => 'Admin',:name => 'Fedena Admin',:status => true},
+#  {:code => 'Admin',:name => 'School Cloud Admin',:status => true},
   {:code => 'MGMT',:name => 'Management',:status => true},
   {:code => 'MAT',:name => 'Mathematics',:status => true},
   {:code => 'OFC',:name => 'Office',:status => true},
@@ -35,7 +35,7 @@ EmployeeDepartment.create([
 
 #EmployeeGrade.delete_all
 EmployeeGrade.create([
-#  {:name => 'Fedena Admin',:priority => 0 ,:status => true,:max_hours_day=>nil,:max_hours_week=>nil},
+#  {:name => 'School Cloud Admin',:priority => 0 ,:status => true,:max_hours_day=>nil,:max_hours_week=>nil},
   {:name => 'A',:priority => 1 ,:status => true,:max_hours_day=>1,:max_hours_week=>5},
   {:name => 'B',:priority => 2 ,:status => true,:max_hours_day=>3,:max_hours_week=>15},
   {:name => 'C',:priority => 3 ,:status => true,:max_hours_day=>4,:max_hours_week=>20},
@@ -91,22 +91,22 @@ Employee.create([
 #user creations
 #User.delete_all
 User.create([
-#   {:username   => 'admin',:password   => 'admin123',:first_name => 'Fedena',
-#    :last_name  => 'Administrator',:email=> 'admin@fedena.com',:role=> 'Admin'},
+#   {:username   => 'admin',:password   => 'admin123',:first_name => 'School Cloud',
+#    :last_name  => 'Administrator',:email=> 'admin@School Cloud.com',:role=> 'Admin'},
    {:username   => 'EMP1',:password   => 'EMP1123',:first_name => 'Unni',
-    :last_name  => 'Koroth',:email=> 'unni@fedena.com',:role=> 'Employee'},
+    :last_name  => 'Koroth',:email=> 'unni@School Cloud.com',:role=> 'Employee'},
    {:username   => 'EMP2',:password   => 'EMP2123',:first_name => 'Vishwajith',
-    :last_name  => 'A',:email=> 'vishu@fedena.com',:role=> 'Employee'},
+    :last_name  => 'A',:email=> 'vishu@School Cloud.com',:role=> 'Employee'},
    {:username   => 'EMP3',:password   => 'EMP3123',:first_name => 'Aravind',
-    :last_name  => 'GS',:email=> 'aravind@fedena.com',:role=> 'Employee'},
+    :last_name  => 'GS',:email=> 'aravind@School Cloud.com',:role=> 'Employee'},
    {:username   => 'EMP4',:password   => 'EMP4123',:first_name => 'Nithin',
-    :last_name  => 'Bekal',:email=> 'nithin@fedena.com',:role=> 'Employee'},
+    :last_name  => 'Bekal',:email=> 'nithin@School Cloud.com',:role=> 'Employee'},
    {:username   => 'EMP5',:password   => 'EMP5123',:first_name => 'Ralu',
-    :last_name  => 'RM',:email=> 'ralu@fedena.com',:role=> 'Employee'},
+    :last_name  => 'RM',:email=> 'ralu@School Cloud.com',:role=> 'Employee'},
    {:username   => '1',:password   => '1123',:first_name => 'John',
-    :last_name  => 'Doe',:email=> 'john@fedena.com',:role=> 'Student'},
+    :last_name  => 'Doe',:email=> 'john@School Cloud.com',:role=> 'Student'},
    {:username   => '2',:password   => '2123',:first_name => 'Samantha',
-    :last_name  => 'Fowler',:email=> 'samantha@fedena.com',:role=> 'Student'}
+    :last_name  => 'Fowler',:email=> 'samantha@School Cloud.com',:role=> 'Student'}
   ])
 
 SmsSetting.delete_all

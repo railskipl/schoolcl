@@ -1,8 +1,56 @@
-<div id="content_header">
-  <h1 id="main_heading">Welcome</h1>
-  <h3 id="sub_heading">to School dashboard</h3>
-<p align="right"><%= Time.now %> </p>
-</div>
+	<div id="masthead">
+		
+		<div class="content_pad">
+			
+			<div id="content_header">
+  				<h1 id="main_heading">Welcome</h1>
+  			<h3 id="sub_heading">to School dashboard</h3>
+			<p align="right"><%= Time.now %> </p>
+			</div>
+			
+			
+		</div> <!-- .content_pad -->
+		
+	</div> <!-- #masthead -->	
+	
+		<div style=" margin: 0 auto; width: 970px;">
+			
+		<div id="side_bar">
+        <div id="fedena_logo">
+          <% if FileTest.exists?("#{RAILS_ROOT}/public/uploads/image/institute_logo.jpg") %>
+            <%= image_tag  "/uploads/image/institute_logo.jpg" ,:width => "155",  :height=>"107" %>
+          <% else %>
+            
+          <div class="fed_logo">
+            <img src="/images/application/app_fedena_logo.jpg"/>
+          </div>
+          <% end %>
+        </div>
+        <div id="sidebar_news_area">
+          <% if action_name == "dashboard" %>
+            <%= link_to " ", { :controller => "news", :action => "index" }, :id => 'news_feed_top_img' %>
+            <div id="news_feed">
+              <% dash_news = News.find(:all, :order => 'created_at desc', :limit => 5) %>
+              <% dash_news.each do |n| %>
+                <div class="sidebar_news_item<%= cycle("0", "1") %>">
+                  <h5><%= link_to n.title, :controller => 'news', :action => 'view', :id => n.id %></h5>
+                  <small>Posted on <%= (n.created_at) %> </small>
+                </div>
+              <% end %>
+              <div class="extender"> </div>
+              <%= link_to image_tag("/images/fedena_user/dashboard/news_feed_more_link.jpg", :border => 0), {:controller => "news", :action => "all"} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+	
+	<div id="admin_content">
+		
+		
+		
+		
+		
+		
 
 <% unless flash[:notice].nil? %> <p class="flash-msg"> <%= flash[:notice] %> </p> <% end %>
 
@@ -164,4 +212,6 @@
 </div>
 
 <div id="option_description"> </div>
- 
+		
+	</div> <!-- #content -->
+	</div>

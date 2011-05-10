@@ -9,34 +9,38 @@
   });
 </script>
 
-<div id="content-header">
- <img src="/images/attendence/attendence.png" alt="" />
-  <h1>Leave Management</h1>
-  <h3>Apply for a leave</h3>
-  <div id="app-back-button">
-    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
-  </div>
-</div>
-
-
-
-
-
-    <div id="page-yield">
-
-  <% unless flash[:notice].nil? %>
-    <p class="flash-msg"> <%= flash[:notice] %> </p>
-  <% end %>
-
-      <% form_for :leave_apply do |l| %>
-          <%= error_messages_for :leave_apply %>
-          <%= l.hidden_field :employee_id, :value=>@employee.id %>
-        Leave type:<%= select :leave_apply, :employee_leave_types_id, @leave_types.map {|s| [s.name, s.id]},:prompt => "Select" %><br/>
-        Start date:<%= l.text_field :start_date %><br/>
-        End date:<%= l.text_field :end_date %><br/>
-        Reason:<%= l.text_field   :reason %>
-        <%= submit_tag "Submit"  %>
-      <% end %>
-
-
-   </div>
+	<div id="masthead">
+		
+		<div class="content_pad">
+			<div id="content-header">
+			 <img src="/images/attendence/attendence.png" alt="" />
+			  <h1>Leave Management</h1>
+			  <h3>Apply for a leave</h3>
+			  <div id="app-back-button">
+			    <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+			  </div>
+			</div>
+		</div> <!-- .content_pad -->
+		
+	</div> <!-- #masthead -->	
+	
+	<div id="content" class="xgrid">
+	    <div id="page-yield">
+	
+	  <% unless flash[:notice].nil? %>
+	    <p class="flash-msg"> <%= flash[:notice] %> </p>
+	  <% end %>
+	
+	      <% form_for :leave_apply do |l| %>
+	          <%= error_messages_for :leave_apply %>
+	          <%= l.hidden_field :employee_id, :value=>@employee.id %>
+	        Leave type:<%= select :leave_apply, :employee_leave_types_id, @leave_types.map {|s| [s.name, s.id]},:prompt => "Select" %><br/>
+	        Start date:<%= l.text_field :start_date %><br/>
+	        End date:<%= l.text_field :end_date %><br/>
+	        Reason:<%= l.text_field   :reason %>
+	        <%= submit_tag "Submit"  %>
+	      <% end %>
+	
+	
+	   </div>		
+	</div> <!-- #content -->

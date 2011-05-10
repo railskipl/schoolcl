@@ -13,6 +13,6 @@ class CreateEmployeeDepartments < ActiveRecord::Migration
   end
 
   def self.create_default
-    EmployeeDepartment.create :code => 'Admin',:name => 'Fedena Admin',:status => true
+    EmployeeDepartment.create :code => 'Admin',:name => 'School Cloud Admin',:status => true
   end
 end

@@ -1,17 +1,21 @@
- <div id="content-header">
-  <img src="/images/attendence/attendence.png" alt="" />
-    <h1>Leave Application</h1>
-    <h3>Pending approval</h3>
-    <div id="app-back-button">
-     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
-    </div>
-  </div>
-
-
-
-
-
-     <div id="page-yield">
+	<div id="masthead">
+		
+		<div class="content_pad">
+			<div id="content-header">
+			  <img src="/images/attendence/attendence.png" alt="" />
+			    <h1>Leave Application</h1>
+			    <h3>Pending approval</h3>
+			    <div id="app-back-button">
+			     <%= link_to_function image_tag("/images/buttons/back.png",:border => 0), "history.back()" %>
+			    </div>
+			  </div>		
+		</div> <!-- .content_pad -->
+		
+	</div> <!-- #masthead -->	
+	
+	<div id="content" class="xgrid">
+		
+<div id="page-yield">
 
        <% unless flash[:notice].nil? %>
          <p class="flash-msg"> <%= flash[:notice] %> </p>
@@ -60,4 +64,6 @@
 
 
 
-<div id="remark-form"> </div>
+<div id="remark-form"> </div>		
+		
+	</div> <!-- #content -->

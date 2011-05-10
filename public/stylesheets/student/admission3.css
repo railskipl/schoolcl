@@ -10,6 +10,7 @@ ul#parents-list li.listodd {
     height : 1.5em; width : 450px;
     list-style-type : none;
     padding : 0.5em 0 0 50px;
+    font-size:15px;
 }
 ul#parents-list li.listeven {
     background :#EEF2FD;

@@ -347,30 +347,43 @@ class EmployeeController < ApplicationController
     @employee = Employee.find(params[:id])
     @additional_fields = AdditionalField.find(:all, :conditions=>"status = true")
     if @additional_fields.empty?
-      redirect_to :action => "edit_privilege", :id => @employee.employee_number
+      redirect_to :action => "admission4", :id => @employee.id
     end
     if request.post?
       params[:employee_additional_details].each_pair do |k, v|
         EmployeeAdditionalDetail.create(:employee_id => params[:id],
           :additional_field_id => k,:additional_info => v['additional_info'])
       end
-      flash[:notice] = "Bank details saved for #{@employee.first_name}"
-      redirect_to :action => "edit_privilege", :id => @employee.employee_number
+      flash[:notice] = "Bank details saved for #{@employee.first_name}" 
+      redirect_to :action => 'admission4',:id => @employee.id 
     end
   end
 
   def edit_privilege
     @privileges = Privilege.find(:all)
     @user = User.find_by_username(params[:id])
-    @employee = Employee.find_by_employee_number(@user.username)
+    @employee = Employee.find(:all)
     if request.post?
       new_privileges = params[:user][:privilege_ids] if params[:user]
       new_privileges ||= []
       @user.privileges = Privilege.find_all_by_id(new_privileges)
-      redirect_to :action => 'admission4',:id => @employee.id
+     
     end
   end
-
+       
+  def edit_privilege2
+    @privileges = Privilege.find(:all)
+    @user = User.find_by_username(params[:id])
+    @employee = Employee.find_by_employee_number(@user.username) 
+    if request.post?
+      new_privileges = params[:user][:privilege_ids] if params[:user]
+      new_privileges ||= []
+      @user.privileges = Privilege.find_all_by_id(new_privileges)  
+      flash[:notice]="Employee Roles Saved. "  
+      redirect_to("/employee/profile/#{@employee.id}")
+    end
+  end        
+  
   def edit3_1
     @employee = Employee.find(params[:id])
     @additional_fields = AdditionalField.find(:all, :conditions=>"status = true")
@@ -393,12 +406,12 @@ class EmployeeController < ApplicationController
     @departments = EmployeeDepartment.find(:all)
     @categories  = EmployeeCategory.find(:all)
     @positions   = EmployeePosition.find(:all)
-    @grades      = EmployeeGrade.find(:all)
+    @grades      = EmployeeGrade.find(:all)   
     if request.post?
       @employee = Employee.find(params[:id])
       Employee.update(@employee, :reporting_manager_id => params[:employee][:reporting_manager_id])
-      flash[:notice]="employee reporting manager saved"
-      redirect_to :controller => "payroll", :action => "manage_payroll", :id=>@employee.id
+      flash[:notice]="Employee Reporting Manager Saved"
+       redirect_to :action => "edit_privilege2", :id => @employee.employee_number  
     end
   
   end
@@ -452,17 +465,11 @@ class EmployeeController < ApplicationController
   end
 
   def select_reporting_manager
-    other_conditions = ""
-    other_conditions += " AND employee_department_id = '#{params[:employee_department_id]}'" unless params[:employee_department_id] == ""
-    other_conditions += " AND employee_category_id = '#{params[:employee_category_id]}'" unless params[:employee_category_id] == ""
-    other_conditions += " AND employee_position_id = '#{params[:employee_position_id]}'" unless params[:employee_position_id] == ""
-    other_conditions += " AND employee_grade_id = '#{params[:employee_grade_id]}'" unless params[:employee_grade_id] == ""
-    @employee = Employee.find(:all,
-      :conditions => "(first_name LIKE \"#{params[:query]}%\"
-                       OR middle_name LIKE \"#{params[:query]}%\"
-                       OR last_name LIKE \"#{params[:query]}%\"
-                       OR (concat(first_name, \" \", last_name) LIKE \"#{params[:query]}%\"))" + other_conditions,
-      :order => "first_name asc") unless params[:query] == ''
+    unless params[:query].nil? or params[:query].empty? or params[:query] == ' '
+      @employee = Employee.first_name_or_last_name_like_any params[:query].split
+    else
+      @employee = ''
+    end
     render :layout => false
   end
 

@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(:version => 20101216093432) do
     t.string   "fax"
     t.string   "photo_filename"
     t.string   "photo_content_type"
-    t.binary   "photo_data",             :limit => 16777215
+    t.binary   "photo_data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -204,12 +204,12 @@ ActiveRecord::Schema.define(:version => 20101216093432) do
     t.string   "email"
     t.string   "photo_filename"
     t.string   "photo_content_type"
-    t.binary   "photo_data",           :limit => 16777215
+    t.binary   "photo_data"
     t.string   "status_description"
-    t.boolean  "is_active",                                :default => true
-    t.boolean  "is_deleted",                               :default => false
+    t.boolean  "is_active",            :default => true
+    t.boolean  "is_deleted",           :default => false
     t.integer  "immediate_contact_id"
-    t.boolean  "is_sms_enabled",                           :default => true
+    t.boolean  "is_sms_enabled",       :default => true
     t.string   "former_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -412,7 +412,7 @@ ActiveRecord::Schema.define(:version => 20101216093432) do
     t.string   "fax"
     t.string   "photo_filename"
     t.string   "photo_content_type"
-    t.binary   "photo_data",             :limit => 16777215
+    t.binary   "photo_data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -430,10 +430,10 @@ ActiveRecord::Schema.define(:version => 20101216093432) do
     t.boolean  "is_common",   :default => false
     t.boolean  "is_holiday",  :default => false
     t.boolean  "is_exam",     :default => false
+    t.boolean  "is_homework", :default => false
     t.boolean  "is_due",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_homework"
   end
 
   create_table "exam_groups", :force => true do |t|
@@ -600,7 +600,7 @@ ActiveRecord::Schema.define(:version => 20101216093432) do
   end
 
   create_table "homework_groups", :force => true do |t|
-    t.string   "name",             :limit => 500
+    t.string   "name"
     t.integer  "batch_id"
     t.string   "homework_type"
     t.boolean  "is_published"
@@ -633,7 +633,6 @@ ActiveRecord::Schema.define(:version => 20101216093432) do
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "description",       :limit => 500
     t.string   "hw_filename"
     t.string   "hw_content_type"
     t.binary   "hw_data"
@@ -783,13 +782,13 @@ ActiveRecord::Schema.define(:version => 20101216093432) do
     t.string   "phone2"
     t.string   "email"
     t.integer  "immediate_contact_id"
-    t.boolean  "is_sms_enabled",                           :default => true
+    t.boolean  "is_sms_enabled",       :default => true
     t.string   "photo_filename"
     t.string   "photo_content_type"
-    t.binary   "photo_data",           :limit => 16777215
+    t.binary   "photo_data"
     t.string   "status_description"
-    t.boolean  "is_active",                                :default => true
-    t.boolean  "is_deleted",                               :default => false
+    t.boolean  "is_active",            :default => true
+    t.boolean  "is_deleted",           :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -810,7 +809,6 @@ ActiveRecord::Schema.define(:version => 20101216093432) do
     t.boolean  "is_deleted",         :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "no_homeworks"
   end
 
   create_table "timetable_entries", :force => true do |t|

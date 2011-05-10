@@ -14,7 +14,8 @@ class CreateHomeworks < ActiveRecord::Migration
       t.datetime :updated_at
       t.string  :hw_filename 
       t.string  :hw_content_type  
-      t.binary  :hw_data          
+      t.binary  :hw_data 
+      t.varchar :description, :limit => 1000          
       
             t.timestamps
     end
